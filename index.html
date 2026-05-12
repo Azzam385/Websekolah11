@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Page</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f0f2a, #000);
+  color: #00fff2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* SEMUA PAGE */
+#startPage, #loadingPage, #mainPage {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#loadingPage, #mainPage { display: none; }
+
+/* BUTTON */
+button {
+    padding: 14px 10px;
+    border: 2px solid #00fff2;
+    background: transparent;
+    color: #00fff2;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00fff2;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: #00fff2;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+/* LOADING BAR */
+.bar {
+  width: 300px;
+  height: 20px;
+  border: 2px solid #00fff2;
+  margin: 10px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00fff2;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: #00fff2;
+  transition: 0.1s;
+}
+
+#percent {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.nextBtn {
+  text-decoration: none;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<!-- 1. HALAMAN START -->
+<div id="startPage">
+  <h1>WELCOME TO MEMORIES SMP NU</h1>
+  <button id="startBtn">LETS GO</button>
+</div>
+
+<!-- 2. HALAMAN LOADING -->
+<div id="loadingPage">
+  <h2>Sabar ya bro...</h2>
+  <div class="bar">
+    <div class="progress" id="progressBar"></div>
+  </div>
+  <div id="percent">0%</div>
+</div>
+
+<!-- 3. HALAMAN UTAMA -->
+<div id="mainPage">
+  <h1>Udah Masuk Nih! 🎉</h1>
+  <p>Loading selesai</p>
+  <button>
+    <a href="halaman1.html" class="nextBtn">Lanjut</a>
+  </button>
+</div>
+
+<script>
+  const startPage = document.getElementById('startPage');
+  const loadingPage = document.getElementById('loadingPage');
+  const mainPage = document.getElementById('mainPage');
+  const startBtn = document.getElementById('startBtn');
+  const percentText = document.getElementById('percent');
+  const progressBar = document.getElementById('progressBar');
+  
+  startBtn.addEventListener('click', () => {
+    // Sembunyiin Start, Munculin Loading
+    startPage.style.display = 'none';
+    loadingPage.style.display = 'flex';
+    
+    let percent = 0;
+    const interval = setInterval(() => {
+      percent += 2;
+      percentText.innerText = percent + '%';
+      progressBar.style.width = percent + '%'; // Isi progress bar
+      
+      if (percent >= 100) {
+        clearInterval(interval);
+        // Loading selesai, masuk ke halaman utama
+        loadingPage.style.display = 'none';
+        mainPage.style.display = 'flex';
+        document.body.style.overflow = 'auto';
+      }
+    }, 60); // 3 detik loading
+  });
+</script>
+
+</body>
+</html>

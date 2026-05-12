@@ -1,0 +1,191 @@
+@font-face {
+font-family: Aretha;
+src: url("Aretha.ttf");
+}
+
+@font-face {
+font-family: Bedisa;
+src: url("Bedisa.otf");
+}
+
+body {
+
+margin: 0;
+
+/* BACKGROUND */
+
+background-image: url("bg.png");
+
+background-size: cover;
+
+background-position: center;
+
+background-repeat: no-repeat;
+
+background-attachment: fixed;
+
+color: white;
+
+text-align: center;
+
+font-family: Bedisa;
+
+}
+
+/* OVERLAY GELAP */
+
+body::before {
+
+content: "";
+
+position: fixed;
+
+width: 100%;
+
+height: 100%;
+
+background: rgba(0,0,0,0.4);
+
+top: 0;
+left: 0;
+
+z-index: -1;
+
+}
+
+/* JUDUL */
+
+h1 {
+
+font-family: Aretha;
+
+font-size: 60px;
+
+margin-top: 25px;
+
+}
+
+/* TEKS */
+
+p {
+
+font-size: 24px;
+
+padding: 15px 25px;
+
+line-height: 1.7;
+
+}
+
+/* FOTO BERJEJER */
+
+.container {
+
+display: flex;
+
+flex-wrap: wrap;
+
+justify-content: center;
+
+gap: 20px;
+
+padding: 20px;
+
+}
+
+/* CARD FOTO */
+
+.card {
+
+width: 300px;
+
+background: rgba(0,0,0,0.45);
+
+padding: 15px;
+
+border-radius: 15px;
+
+}
+
+/* FOTO */
+
+.foto {
+
+width: 100%;
+
+border-radius: 25px;
+
+}
+
+/* TOMBOL */
+
+button {
+    padding: 14px 10px;
+    border: 2px solid #00fff2;
+    background: transparent;
+    color: #00fff2;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00fff2;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: #00fff2;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+/* RESPONSIVE HP */
+
+@media (max-width: 600px) {
+
+h1 {
+
+font-size: 40px;
+
+}
+
+p {
+
+font-size: 19px;
+
+}
+
+.card {
+
+width: 90%;
+
+}
+
+}
+
+
+/* LOADING */
+#loadingBox {
+  display: none;
+  margin-top: 20px;
+}
+
+.bar {
+  width: 300px;
+  height: 20px;
+  border: 2px solid #00fff2;
+  margin: 10px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00fff2;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: #00fff2;
+  transition: 0.1s;
+}
+
+#percent {
+  font-size: 18px;
+}

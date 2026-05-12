@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLASS SMP NU</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a1a;
+    color: #00fff2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    text-shadow: 0 0 15px #00fff2;
+}
+
+.grid-kelas {
+    display: grid;
+    grid-template-columns: 130px 130px;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Link biar gak ada garis bawah */
+.grid-kelas a,
+.kembali-link {
+    text-decoration: none;
+}
+
+button {
+    width: 130px;
+    padding: 14px 10px;
+    border: 2px solid #00fff2;
+    background: transparent;
+    color: #00fff2;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00fff2;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #00fff2;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* IX G di tengah */
+.ix-g {
+    grid-column: 1 / 3;
+    justify-self: center;
+}
+
+/* Tombol kembali */
+.kembali {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>CLASS SMP NU</h1>
+
+    <div class="grid-kelas">
+
+        <a href="kelas9a.html">
+            <button>IX A</button>
+        </a>
+
+        <a href="kelas9b.html">
+            <button>IX B</button>
+        </a>
+
+        <a href="kelas9c.html">
+            <button>IX C</button>
+        </a>
+
+        <a href="kelas9d.html">
+            <button>IX D</button>
+        </a>
+
+        <a href="kelas9e.html">
+            <button>IX E</button>
+        </a>
+
+        <a href="kelas9f.html">
+            <button>IX F</button>
+        </a>
+
+        <a href="kelas9g.html" class="ix-g">
+            <button>IX G</button>
+        </a>
+
+    </div>
+
+    <a href="halaman2.html" class="kembali-link">
+        <button class="kembali">Kembali</button>
+    </a>
+
+</div>
+
+</body>
+</html>
